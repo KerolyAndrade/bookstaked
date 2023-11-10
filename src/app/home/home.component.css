@@ -1,0 +1,83 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0d3a2;
+    border: 2px solid #8b572a;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #ccc;
+  }
+  
+  .logo-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .menu-container {
+    display: flex;
+  }
+  
+  .menu-container button {
+    margin-right: 10px; /* Adicione margem entre os botões */
+  }
+  /* Adicione essas propriedades ao seu CSS para estilizar os botões */
+.button-container button,
+.button-container a {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 12px;
+    border: 2px solid #8b572a;
+    border-radius: 5px;
+    background-color: #f0d3a2;
+    color: #8b572a;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-container button:hover,
+.button-container a:hover {
+    background-color: #8b572a;
+    color: #fff;
+}
+
+/* home.component.css */
+
+.body-content {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0d3a2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .body-content h2 {
+    color: #8b572a;
+  }
+  
+  .benefits,
+  .testimonials,
+  .exclusive-features,
+  .engaged-community,
+  .get-started {
+    margin-bottom: 20px;
+  }
+  
+  .button-container button {
+    padding: 10px;
+    background-color: #8b572a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .button-container button:hover {
+    background-color: #694023;
+  }
+  
+  

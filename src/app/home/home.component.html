@@ -1,0 +1,14 @@
+
+<div class="header">
+    <div class="logo-container">
+        <img src="../assets/bookstacked.png" alt="Logo do Seu App" />
+    </div>
+    <div class="menu-container button-container">
+        <button *ngFor="let menuItem of menuItems" (click)="navigate(menuItem.path)">
+            {{ menuItem.label }}
+        </button>
+    </div>
+</div>
+
+
+
