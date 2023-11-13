@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { HomeComponent } from './home/home.component';
-import { NgxGalleryModule } from 'ngx-gallery';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import { NgxGalleryModule } from 'ngx-gallery';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

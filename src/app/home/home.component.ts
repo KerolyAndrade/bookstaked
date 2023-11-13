@@ -1,46 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  galleryOptions: NgxGalleryOptions[] = [];
-  galleryImages: NgxGalleryImage[] = [];
+export class HomeComponent {
+  // Adicione as propriedades imageUrl e imageAlt
+  imageUrl = 'assets/imagem2.jpg';
+  imageAlt = 'Imagem 1';
+
+  // Se precisar de itens de menu, você pode adicionar aqui
+  menuItems: MenuItem[] = [
+    { label: 'Item 1', path: '/item1' },
+    { label: 'Item 2', path: '/item2' },
+    { label: 'Item 3', path: '/item3' },
+  ];
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.galleryOptions = [
-      {
-        width: '600px',
-        height: '400px',
-        thumbnailsColumns: 3,
-        imageAnimation: NgxGalleryAnimation.Slide,
-        previewCloseOnClick: true,
-        previewCloseOnEsc: true,
-        previewKeyboardNavigation: true
-      }
-    ];
-
-    this.galleryImages = [
-      {
-        small: '../assets/imagem1.jpg',
-        medium: 'assets/imagem1.jpg',
-        big: 'assets/imagem1.jpg'
-      },
-      {
-        small: 'assets/imagem2.jpg',
-        medium: 'assets/imagem2.jpg',
-        big: 'assets/imagem2.jpg'
-      },
-      {
-        small: 'assets/imagem3.jpg',
-        medium: 'assets/imagem3.jpg',
-        big: 'assets/imagem3.jpg'
-      }
-    ];
+  navigate(path: string): void {
+    console.log('Navigate to:', path);
+    // Adicione a lógica de navegação aqui, se necessário
   }
+}
+
+interface MenuItem {
+  label: string;
+  path: string;
 }
