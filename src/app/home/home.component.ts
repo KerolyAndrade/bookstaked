@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,11 +18,11 @@ export class HomeComponent {
     { label: 'Item 3', path: '/item3' },
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   navigate(path: string): void {
     console.log('Navigate to:', path);
-    // Adicione a lógica de navegação aqui, se necessário
+    this.router.navigate([path]);
   }
 }
 
