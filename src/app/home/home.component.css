@@ -1,14 +1,18 @@
+/* Estilos gerais */
 body {
   font-family: 'Courier New', monospace;
-  background-color: #f3f0eb; /* Alterei a cor de fundo para um tom mais claro */
+  background-color: #f3f0eb;
   margin: 0;
   padding: 0;
 }
 
+/* Cabeçalho */
 .header {
   text-align: center;
   padding: 20px 0;
-  background-color: #fff; /* Fundo branco para o cabeçalho */
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .logo-container img {
@@ -28,20 +32,23 @@ body {
 
 .button-container button {
   margin-left: 10px;
-  padding: 8px 16px;
-  background-color: transparent; /* Fundo transparente nos botões */
+  padding: 10px 20px; /* Aumentei o padding dos botões */
+  background-color: transparent;
   color: #8b572a;
-  border: 2px solid #8b572a; /* Borda nos botões */
-  border-radius: 5px;
+  border: 2px solid #8b572a;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .button-container button:hover {
   background-color: #8b572a;
   color: #fff;
+  transform: translateY(-2px); /* Ajustei a transformação no hover */
 }
 
+/* Container principal */
 .content-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -65,30 +72,120 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* Rodapé */
 .footer {
   background-color: #8b572a;
   color: #fff;
   text-align: center;
   padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-/* Para o rodapé, defina a classe 'footer' na sua estrutura HTML */
+/* Imagem de fundo */
 .background-image {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Evita que a imagem ultrapasse os limites do contêiner */
+  overflow: hidden;
+  height: 100vh;
 }
 
 .main-image {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 100vh; /* ou o valor desejado */
   opacity: 0.8;
   transition: transform 0.3s ease-in-out;
   filter: sepia(20%) saturate(120%);
 }
 
-/* Para garantir que a imagem não ultrapasse os limites do contêiner */
 .main-image:hover {
   transform: scale(1.1);
   opacity: 1;
 }
+
+/* Seção de Comentários */
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment {
+  display: flex;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.user-info {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info span {
+  font-weight: bold;
+}
+
+.comment p {
+  margin: 0;
+}
+
+/* Seção de Livros em Destaque */
+.featured-books {
+  margin-top: 50px; /* Espaçamento para separar da seção anterior */
+}
+
+/* Estilo do título da seção */
+.featured-books h2 {
+  font-size: 2em;
+  color: #8b572a;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo da lista de livros */
+.featured-books .book-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px; /* Espaçamento entre os livros */
+  flex-wrap: wrap; /* Quebra de linha automática para se ajustar ao tamanho da tela */
+}
+
+/* Estilo de cada livro individual */
+.featured-books .book-list .book-item {
+  width: 200px; /* Largura dos elementos de livro */
+  text-align: center;
+}
+
+.featured-books .book-list .book-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.featured-books .book-list .book-item h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.featured-books .book-list .book-item p {
+  margin-top: 5px;
+  color: #666;
+  font-size: 0.9em;
+}
+

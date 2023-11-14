@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   // Adicione as propriedades imageUrl e imageAlt
-  imageUrl = 'assets/imagem2.jpg';
+  imageUrl = 'assets/imagem0.jpg';
   imageAlt = 'Imagem 1';
 
   // Se precisar de itens de menu, você pode adicionar aqui
