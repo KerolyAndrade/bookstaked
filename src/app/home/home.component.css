@@ -1,17 +1,14 @@
 body {
   font-family: 'Courier New', monospace;
-  background-color: #e0d6b7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  background-color: #f3f0eb; /* Alterei a cor de fundo para um tom mais claro */
   margin: 0;
-  text-align: center;
+  padding: 0;
 }
 
 .header {
   text-align: center;
+  padding: 20px 0;
+  background-color: #fff; /* Fundo branco para o cabeçalho */
 }
 
 .logo-container img {
@@ -20,16 +17,66 @@ body {
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
+  filter: sepia(50%) saturate(150%);
+}
+
+.button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.button-container button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: transparent; /* Fundo transparente nos botões */
+  color: #8b572a;
+  border: 2px solid #8b572a; /* Borda nos botões */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #8b572a;
+  color: #fff;
 }
 
 .content-container {
-  position: relative;
-  width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+.content-container h2 {
+  font-size: 2.5em;
+  color: #8b572a;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content-container p {
+  font-size: 1.4em;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+.footer {
+  background-color: #8b572a;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Para o rodapé, defina a classe 'footer' na sua estrutura HTML */
 .background-image {
   position: relative;
+  width: 100%;
+  overflow: hidden; /* Evita que a imagem ultrapasse os limites do contêiner */
 }
 
 .main-image {
@@ -37,45 +84,11 @@ body {
   height: auto;
   opacity: 0.8;
   transition: transform 0.3s ease-in-out;
+  filter: sepia(20%) saturate(120%);
 }
 
+/* Para garantir que a imagem não ultrapasse os limites do contêiner */
 .main-image:hover {
   transform: scale(1.1);
-  opacity: 1; /* Ao passar o mouse, a imagem fica com opacidade total */
+  opacity: 1;
 }
-
-.gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.gallery-item {
-  margin: 0 10px 20px;
-}
-/* Seção anterior continua... */
-
-.button-container {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-}
-
-.button-container button {
-  margin-left: 10px;
-  padding: 8px 16px;
-  background-color: #8b572a;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button-container button:hover {
-  background-color: #694023;
-}
-
-/* Seção seguinte continua... */
