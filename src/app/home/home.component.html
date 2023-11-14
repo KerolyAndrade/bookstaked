@@ -8,7 +8,7 @@
     </div>
 </div>
 
-<div class="content-container">
+<div class="content-container" #content>
     <div class="background-image">
         <img [src]="imageUrl" [alt]="imageAlt" class="main-image">
     </div>
@@ -30,18 +30,30 @@
             <!-- Livro 1 -->
             <div class="book-item">
                 <img src="../assets/book1.jpg" alt="Livro 1">
-                <h3>Título do Livro 1</h3>
-                <p>Autor do Livro 1</p>
+                <h3>Harry Potter e o orgulho de Princepe</h3>
+                <p>J. K. Rowling</p>
             </div>
 
             <!-- Livro 2 -->
             <div class="book-item">
-                <img src="../assets/book3.jpg" alt="Livro 2">
-                <h3>Título do Livro 2</h3>
-                <p>Autor do Livro 2</p>
+                <img src="../assets/book2.jpg" alt="Livro 2">
+                <h3>Cidade dos etéreos II</h3>
+                <p>Ranson Riggs</p>
             </div>
 
-            <!-- Adicione mais livros conforme necessário -->
+            <!-- Livro 3 -->
+            <div class="book-item">
+                <img src="../assets/book3.jpg" alt="Livro 3">
+                <h3>Divergente</h3>
+                <p>Veronica Roth</p>
+            </div>
+
+            <!-- Livro 4 -->
+            <div class="book-item">
+                <img src="../assets/book3.jpeg" alt="Livro 4">
+                <h3>O Jardim Secreto</h3>
+                <p>Frances Hodgson Burnett</p>
+            </div>
         </div>
     </div>
 
@@ -64,5 +76,53 @@
         </div>
         <!-- Adicione mais comentários conforme necessário -->
     </div>
+    <div class="featured-authors">
+        <h2>Autores em Destaque</h2>
+        <div class="author-list">
+            <!-- Autor 1 -->
+            <div class="author-item">
+                <img src="../assets/author1.jpg" alt="Autor 1">
+                <h3>J.K. Rowling</h3>
+                <p>Conhecida mundialmente pela série de livros "Harry Potter", é uma autora britânica que criou um 
+                    universo mágico extremamente popular. A série Harry Potter não apenas cativou todas as idades
+                     abordando temas de amizade, coragem, amor e o eterno embate entre o bem e o mal.</p>
+            </div>
+    
+            <!-- Autor 2 -->
+            <div class="author-item">
+                <img src="../assets/author2.jpg" alt="Autor 2">
+                <h3>Stephen King</h3>
+                <p>Um dos mestres contemporâneos do terror e do suspense, ele é um prolífico escritor americano.
+                     Seus romances exploram o medo, o sobrenatural e o lado sombrio da psique humana. Obras notáveis
+                      incluem "O Iluminado", "It - A Coisa", "Carrie, a Estranha", entre muitos outros. 
+                      Sua habilidade em criar narrativas envolventes e personagens complexos é icônica.</p>
+            </div>
+    
+            <!-- Autor 3 -->
+            <div class="author-item">
+                <img src="../assets/author3.jpg" alt="Autor 3">
+                <h3>Agatha Christie</h3>
+                <p>Reconhecida como a "Rainha do Crime", foi uma escritora britânica de romances policiais. 
+                    Suas histórias apresentam personagens como Hercule Poirot e Miss Marple, investigadores talentosos que 
+                    solucionam mistérios intricados. 
+                    Seu estilo único de escrita e suas reviravoltas surpreendentes tornaram suas obras clássicos do gênero.</p>
+            </div>
+    
+            <!-- Autor 4 -->
+            <div class="author-item">
+                <img src="../assets/author4.jpg" alt="Autor 4">
+                <h3>Neil Gaiman</h3>
+                <p>Neil Gaiman é um autor britânico conhecido por suas narrativas fantasiosas e mágicas. 
+                    Ele escreve romances, quadrinhos, contos e roteiros para filmes e séries. 
+                    Obras como "Deuses Americanos", "Coraline" e "Sandman" exploram temas como mitologia, 
+                    fantasia e o mundo dos sonhos, ganhando reconhecimento pela originalidade e criatividade.</p>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="spacer"></div>
+<div class="footer" [class.show]="showFooter"#footer>
+    <p>© 2023 Keroly Andrade. Todos os direitos reservados. BookStacked</p>
+</div>
+
 

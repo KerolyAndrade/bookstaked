@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,16 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  // Adicione as propriedades imageUrl e imageAlt
-  imageUrl = 'assets/imagem0.jpg';
+  imageUrl = 'assets/imagemplataforma.jpeg';
   imageAlt = 'Imagem 1';
+  showFooter: boolean = false;
 
-  // Se precisar de itens de menu, você pode adicionar aqui
-  menuItems: MenuItem[] = [
-    { label: 'Item 1', path: '/item1' },
-    { label: 'Item 2', path: '/item2' },
-    { label: 'Item 3', path: '/item3' },
-  ];
+  @ViewChild('content') content: ElementRef | undefined;
+  @ViewChild('footer') footer: ElementRef | undefined;
 
   constructor(private router: Router) {}
 
@@ -24,9 +20,20 @@ export class HomeComponent {
     console.log('Navigate to:', path);
     this.router.navigate([path]);
   }
-}
 
-interface MenuItem {
-  label: string;
-  path: string;
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (this.content && this.footer) {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const contentHeight = this.content.nativeElement.clientHeight;
+      const footerHeight = this.footer.nativeElement.clientHeight;
+      const totalHeight = contentHeight + footerHeight;
+
+      if (scrollPosition >= totalHeight - window.innerHeight) {
+        this.showFooter = true;
+      } else {
+        this.showFooter = false;
+      }
+    }
+  }
 }
