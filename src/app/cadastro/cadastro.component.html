@@ -14,7 +14,7 @@
     </div>
     <div class="cadastro-container">
         <h1>Cadastro</h1>
-        <form>
+        <form (ngSubmit)="onSubmit(form.value)">
             <input type="text" placeholder="Nome" name="nome" required>
             <input type="text" placeholder="Sobrenome" name="sobrenome" required>
             <input type="text" placeholder="Email" name="email" required>
