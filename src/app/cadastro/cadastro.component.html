@@ -14,17 +14,17 @@
     </div>
     <div class="cadastro-container">
         <h1>Cadastro</h1>
-        <form (ngSubmit)="onSubmit(form.value)">
-            <input type="text" placeholder="Nome" name="nome" required>
-            <input type="text" placeholder="Sobrenome" name="sobrenome" required>
-            <input type="text" placeholder="Email" name="email" required>
-            <input type="password" placeholder="Senha" name="senha" required>
-            <input type="password" placeholder="Confirmar senha" name="confirmarSenha" required>
-            <div class="button-container">
-                <a [routerLink]="['/login']">Já tenho conta</a>
-                <button type="submit">Criar conta</button>
-            </div>
-        </form>
+        <form (ngSubmit)="onSubmit()">
+            <input type="text" placeholder="Nome" name="nome" [(ngModel)]="dadosCadastro.nome" required>
+            <input type="text" placeholder="Sobrenome" name="sobrenome" [(ngModel)]="dadosCadastro.sobrenome" required>
+            <input type="email" placeholder="Email" name="email" [(ngModel)]="dadosCadastro.email" required>
+            <input type="password" placeholder="Senha" name="senha" [(ngModel)]="dadosCadastro.senha" required>
+            <input type="password" placeholder="Confirmar senha" name="senhaConfirmacao" [(ngModel)]="senhaConfirmacao" required (input)="verificarSenha()">
+
+            <!-- Outros campos do formulário -->
+            <button type="submit" [disabled]="senhasNaoCoincidem">Criar conta</button>
+            <p *ngIf="senhasNaoCoincidem" class="erro-senha">As senhas não coincidem. Por favor, verifique.</p>
+          </form>
     </div>
 </body>
 </html>

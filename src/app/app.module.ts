@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; // Certifique-se de importar isso
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,9 +10,6 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; // Importe o módulo Firestore
-
-
-
 
 
 @NgModule({
@@ -34,7 +32,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; // Impo
       measurementId: "G-3GTSZV7JXV"
     }), 
     AngularFirestoreModule,
-    HttpClient,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

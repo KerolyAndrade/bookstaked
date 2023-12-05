@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { FirebaseAuthService } from 'src/app/firebase-auth.service';
+
+
 
 @Component({
   selector: 'app-cadastro',
@@ -8,33 +10,33 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
-  constructor(private http: HttpClient, private router: Router) {}
+  dadosCadastro: any = {}; // Objeto para armazenar os dados do formulário
+  senhaConfirmacao: string = '';
+  senhasNaoCoincidem: boolean = false; // Variável para controlar a exibição da mensagem de erro
 
-  enviarCadastro(dadosCadastro: any) {
-    // Aqui você deve enviar os dados para o Firebase
-    const url = 'https://console.firebase.google.com/project/bookstaked/database/bookstaked-default-rtdb/data?hl=pt-br;' // Substitua pela URL correta da sua API do Firebase
+  constructor(private authService: FirebaseAuthService, private router: Router) {}
 
-    this.http.post(url, dadosCadastro).subscribe((response) => {
-      console.log('Dados enviados com sucesso para o Firebase:', response);
-      // Redirecionar ou fazer algo após o envio bem-sucedido
-      this.router.navigate(['/login']); // Por exemplo, redirecionar para a página de login após o cadastro
-    }, (error) => {
-      console.error('Erro ao enviar dados para o Firebase:', error);
-      // Tratar erro, exibir mensagem para o usuário, etc.
-    });
+  enviarCadastro() {
+    if (this.dadosCadastro.senha === this.senhaConfirmacao) {
+      this.authService.registrarUsuario(this.dadosCadastro.email, this.dadosCadastro.senha, this.dadosCadastro)
+        .subscribe((response: any) => {
+          console.log('Usuário registrado com sucesso:', response);
+          this.router.navigate(['/login']);
+        }, (error: any) => {
+          console.error('Erro ao registrar usuário:', error);
+        });
+    } else {
+      this.senhasNaoCoincidem = true;
+      console.error('As senhas não coincidem');
+    }
   }
 
-  onSubmit(form: any) {
-    // Manipule os dados do formulário e chame enviarCadastro()
-    const dadosCadastro = {
-      nome: form.nome,
-      sobrenome: form.sobrenome,
-      email: form.email,
-      senha: form.senha,
-      // Outros dados do cadastro
-    };
-
-    // Chame enviarCadastro() com os dados do formulário
-    this.enviarCadastro(dadosCadastro);
+  onSubmit() {
+    // Verifique se a senha e a confirmação de senha são iguais
+    this.enviarCadastro();
   }
+  verificarSenha() {
+    this.senhasNaoCoincidem = this.dadosCadastro.senha !== this.senhaConfirmacao;
+  }
+
 }
