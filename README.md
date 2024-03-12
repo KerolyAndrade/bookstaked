@@ -1,4 +1,4 @@
-# SistemaDeLivros
+# Bookstaked um aplicativo para amantes de livros
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 
